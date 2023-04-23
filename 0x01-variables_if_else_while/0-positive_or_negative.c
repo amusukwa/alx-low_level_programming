@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-/** 
+/**
  * main - Entry point
  *
  * Description - a program that uses the if else statement
@@ -14,10 +14,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
-		printf("%d is positive")
-			if (n == 0)
-				printf("%d is zero")
+		printf("%d is positive\n", n)
+			else if (n == 0)
+				printf("%d is zero\n", n)
 			else
-				printf("%d is negatve")
+				printf("%d is negatve\n", n)
 	return (0);
 }
