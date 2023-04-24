@@ -14,10 +14,8 @@ int main(void)
 	{
 		if (n !=  111 && n != 113)
 		{
-			n++;
-			continue;
+			putchar(n);
 		}
-		putchar(n);
 		n++;
 	}
 	putchar('\n');
