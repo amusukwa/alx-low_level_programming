@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 /**
- *  main - a program that uses while statement
+ *  main - a program that uses while statemenit
  *
  *  Return: 0 Always(Success)
  */
