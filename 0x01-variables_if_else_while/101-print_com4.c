@@ -2,25 +2,41 @@
 /**
  * main - Entry point
  *
- * Return: 0 Alaways(Success)
+ * Return: 0 Always(Success)
  */
 int main(void)
 {
-	 char digit[4];
+        int a = '0';
+        int b = '0';
+	int c = '0';
 
-    for (int i = 0; i < 8; i++)
-    {
-        for (int j = i + 1; j < 9; j++)
+        while (a <= '9')
         {
-            for (int k = j + 1; k < 10; k++)
-            {
-                digit[0] = i + '0';
-                digit[1] = j + '0';
-                digit[2] = k + '0';
-                digit[3] = '\0';
-                printf("%s\n", digit);
-            }
+		while(b <= '9')
+		{
+                while (c <= '9')
+                {
+                        if (!(a > b && b > c || a == b && b == c))
+                        {
+                                putchar(a);
+                                putchar(b);
+				putchar(c);
+                                if (b == '8' && c == '9')
+                                {
+                                        putchar('\n');
+                                }
+                                else
+                                {
+                                        putchar(',');
+                                        putchar(' ');
+                                }
+                        }
+                        c++;
+                }
+		b++;
+		}
+                a++;
         }
-    }
-    return (0);
+        return (0);
 }
+             
