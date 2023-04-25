@@ -1,8 +1,7 @@
 #include "main.h"
 /**
- * _isalpha - Returns 1 a letter,lowercase or uppercase 
+ * _isalpha - Returns 1 a letter,lowercase,uppercase
  * returns 0 otherwise
- *
  * Return: 1 for letter,0 for others
  *
  * @c: Character in ASCii
