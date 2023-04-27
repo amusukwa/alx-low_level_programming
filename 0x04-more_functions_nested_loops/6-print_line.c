@@ -1,9 +1,8 @@
 #include "main.h"
-
 /**
- * print_line-draws straight line in the terminal 
- * @n:number of lines to draw
- * Return: no return type
+ * print_line - draws line in terminal
+ * @n:number of lines
+ * Return:no type
  */
 void print_line(int n)
 {
