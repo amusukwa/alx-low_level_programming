@@ -1,23 +1,25 @@
 #include "main.h"
 
 /**
- * main - entry point
+ * print_number -prints an integer
  *
- * Return: o Always
+ * @n:input as integer
+ *
+ * Return: no return type
  *
  */
-void print_numbers(int n)
+void print_number(int n)
 {
-
-        if (n < 0) {
-       _ putchar('-');
-        n = -n;
-    }
-
-     if (n/10)
-        _putchar(n/10);
-
-   
-    putchar(n%10 + '0');
+unsigned int d = n;
+if (n < 0) 
+{
+_putchar('-');
+d = -d;
+ 
 }
 
+if ((d / 10) > 0)
+print_number( d  / 10 );
+
+_putchar(d %10 + '0');
+}
