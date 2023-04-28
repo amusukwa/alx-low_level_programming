@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - Entry point
@@ -7,16 +8,30 @@
  */
 int main(void)
 {
-	int c;
-	long num = 612852475143;
+int c;
+long num i, j, lp, num  = 612852475143;
 
-	for (c = (int) sqrt(num); c > 2; c++)
-	{
-		if (num % c == 0)
-		{
-			printf("%d\n", c);
-			break;
-		}
-	}
-	return (0);
+for (i = 2; i < num / 2; i++)
+{
+prime = i;
+
+if (num % i == 0)
+{
+lp = num / i;
+}
+
+for (j = 2; j < lp / 2; j++)
+{
+if (lp % j == 0)
+{
+prime = 0;
+break;
+}
+if (prime)
+{
+printf("%ld\n", lp);
+break;
+}
+}
+return (0);
 }
