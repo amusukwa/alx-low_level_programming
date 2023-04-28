@@ -8,12 +8,12 @@
  */
 int main(void)
 {
-int c;
 long int i, j, lp, num  = 612852475143;
+int prime;
 
 for (i = 2; i < num / 2; i++)
 {
-prime = i;
+prime = 1;
 
 if (num % i == 0)
 {
