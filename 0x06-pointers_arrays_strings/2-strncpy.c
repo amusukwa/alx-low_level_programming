@@ -13,12 +13,12 @@ int j;
 j = 0;
 while (j < n && src[j] != '\0')
 {
-dest[i] = src[j];
-j++
+dest[j] = src[j];
+j++;
 }
 while (j < n)
 {
-dest[i] = '\0';
+dest[j] = '\0';
 j++;
 }
 return (dest);
