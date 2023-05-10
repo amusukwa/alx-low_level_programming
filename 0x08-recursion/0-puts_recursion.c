@@ -11,5 +11,6 @@ if (*s)
 _putchar(*s);
 _putchar(s + 1);
 }
+else
 _putchar('\n');
 }
