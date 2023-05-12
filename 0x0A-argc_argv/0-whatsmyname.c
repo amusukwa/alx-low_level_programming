@@ -1,11 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - Entry point
- * Deescription - prints first argument
+ * main - Prints its name
+ * @argc:argument count
+ * @argv:argument vector
  * Return: 0 Always(success)
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-       puts(argv[0]);
-     
+(void)argc;
+printf("%s\n", argv[0]);
+return (0);
+}
