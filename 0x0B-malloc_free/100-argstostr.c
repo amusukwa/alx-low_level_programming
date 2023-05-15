@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "main.h"
 /* argstostr -  concatenates all the arguments of your program
- * @grid:grid to be freed
- * @height:height of grid
- * Return: no return type
+ * @ac:intger input
+ * @av:array of argumenst 
+ * Return:concatenated string
  */
 char *argstostr(int ac, char **av)
 {
@@ -23,30 +23,16 @@ if (str == NULL)
 return (NULL);
 
 for (i = 0; i < ac; i++)
-		
-	{
-		
-	for (n = 0; av[i][n]; n++)
-		
-	{
-		
-		str[r] = av[i][n];
-		
-		r++;
-		
-	}
-		
-	if (str[r] == '\0')
-		
-	{
-		
-		str[r++] = '\n';
-		
-	}
-		
-	}
-		
-	return (str);
-		
-
-
+{
+for (n = 0; av[i][n]; n++)
+{
+str[r] = av[i][n];
+r++;
+}
+if (str[r] == '\0')
+{
+str[r++] = '\n';
+}
+}
+return (str);
+}
