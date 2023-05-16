@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "main.h"
-/* argstostr -  concatenates all the arguments of your program
+/**
+ * argstostr -  concatenates all the arguments of your program
  * @ac:intger input
  * @av:array of argumenst 
  * Return:concatenated string
