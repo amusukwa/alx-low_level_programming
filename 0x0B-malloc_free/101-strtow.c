@@ -1,88 +1,67 @@
 #include <stdlib.h>
 #include "main.h"
-int word_len(char *str);
-int count_words(char *str);
-char **strtow(char *str);
 /**
- * word_len - locates index marking end of line
- * @str:string to be searched
- * Return:index marking the end of line
+ *count_word - helper function to count the number of words in a string         
+ *@s: string to evaluate                
+ *Return: number of words               
  */
-int word_len(char *str)
+int count_word(char *s)
 {
-int index = 0;
-int len = 0;
-
-while (*(str + index) && *(str + index) != ' ')
+int flag, c, w;
+flag = 0;
+w = 0;
+for (c = 0; s[c] != '\0'; c++)
 {
-len++;
-index++;
-}
-return (len);
-}
-
-/**
- * count_words - counts words in a string
- * @str:string to be counted
- * Return:number of words in string
- */
-int count_words(char *str)
+if (s[c] == ' ')
+flag = 0;
+else if (flag == 0)
 {
-int index = 0, words = 0, len = 0;
-for (index = 0; *(str + index); index++)
-len++;
-for (index = 0; index < len; index++)
-{
-if (*(str + index)!= ' ')
-{
-words++;
-index += word_len(str + index);
+flag = 1;
+w++;
 }
 }
-	return (words);
+return (w);
 }
-
-/** 
- * strtow -  splits a string into words
- * @str:string to be split
- * Return:pointer to split words
+/**             
+ *strtow - splits a string into words           
+ * @str: string to split                
+ * Return: pointer to an array of strings (Success)             
+ * or NULL (Error)
  */
 char **strtow(char *str)
 {
-char **strings;
-int index, words, w, letters, l;
-
-if (str == NULL || str[0] == '\0')
-{
-return (NULL);
-}
-words = count_words(str);
+char **matrix, *tmp;
+int i, k = 0, len = 0, words, c = 0, start, end;
+while (*(str + len))
+len++;
+words = count_word(str);
 if (words == 0)
-{
 return (NULL);
-}
-strings = malloc(sizeof(char *) * words + 1);
-if (strings == NULL)
+matrix = (char **) malloc(sizeof(char *) * (words + 1));
+if (matrix == NULL)
+return (NULL);
+for (i = 0; i <= len; i++)
 {
-return (NULL);++
-for (w = 0; w < words; w++)
+if (str[i] == ' ' || str[i] == '\0')
 {
-while (str[index] == ' ')
+if (c)
 {
-index++;
-letters = word_len(str + index);
-strings[w] = malloc(sizeof(char) * letters + 1);
-if (strings[w] == NULL)
-{
-for (; w >= 0; w--)
-free(strings[w]);
-free(strings);
-return (NULL);	
-for (l = 0; l < letters; l++)
-strings[w][l] = str[index++];
-strings[w][l] = '\0';
+end = i;
+tmp = (char *) malloc(sizeof(char) * (c1));
+if (tmp == NULL)
+return (NULL);
+while (start < end)
+*tmp++ = str[start++];
+*tmp = '\0';
+matrix[k] = tmp - c;
+k++;c
+c= 0;
 }
 }
-strings[w] = NULL;
-return (strings);
-}}
+else if (c++ == 0)
+start = i;
+}
+matrix[k] = NULL;
+return (matrix);
+}
+-- INSERT --                                                                                                                       1,1           Top
