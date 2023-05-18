@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
 *malloc_checked -  allocates memory using malloc
 *@b:input integer
@@ -13,5 +14,5 @@ p = malloc(b);
 if (p == NULL)
 exit(98);
 
-return (98);
+return (p);
 }
