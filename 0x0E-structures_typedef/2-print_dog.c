@@ -13,6 +13,6 @@ if (d != NULL)
 {
 printf("Name: %s\n", (d->name) ? d->name : ("nil"));
 printf("Age: %.6f\n", (d->age) ? d->age : 0);
-printf("Ownwer:%s\n", (d->owner) ? d->owner : ("nil"));
+printf("Ownwer: %s\n", (d->owner) ? d->owner : ("nil"));
 }
 }
