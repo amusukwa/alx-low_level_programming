@@ -2,7 +2,21 @@
 #include <stdio.h>
 
 /**
- * print_dog - prints a dogs info
- * @d:dog structure
- * Return:no return type
+ *int_index - searches for an integer
+ * @array:array that holds an integer
+ * @size:elements number
+ * @cmp:pointer to the function
+ * Return:first element index cmp doesnt return 0
  */
+int int_index(int *array, int size, int (*cmp)(int))
+{
+int i;
+if (array == NULL || size <= 0 || cmp == NULL)
+return (-1);
+for (i = 0; i < size; i++)
+{
+if (cmp(array[i]))
+return (i);
+}
+return (-1);
+}
