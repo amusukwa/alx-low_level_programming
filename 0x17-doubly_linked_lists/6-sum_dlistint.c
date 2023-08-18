@@ -1,9 +1,10 @@
 #include "lists.h"
- /**
-  * sum_dlistint - returns sum of node
-  * @head:pointer to first element of list
-  * Returns: 0 if list is empty
-  */
+
+/**
+ * sum_dlistint - returns sum of node
+ * @head: pointer to the first element of the list
+ * Return: sum of node values
+ */
 
 int sum_dlistint(dlistint_t *head)
 {
