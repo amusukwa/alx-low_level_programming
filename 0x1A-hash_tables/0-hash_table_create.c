@@ -38,9 +38,3 @@ table->array[i] = NULL;
 }
 return (table);
 }
-
-
-
-
-
-
