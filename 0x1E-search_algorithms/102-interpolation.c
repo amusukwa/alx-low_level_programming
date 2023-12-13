@@ -23,8 +23,9 @@ return (-1);
 
 while (low <= high && value >= array[low] && value <= array[high])
 {
+pos = low + ((double)(value - array[low]) / (array[high] - array[low]));
+pos *= (high - low);
 
-pos = low + (double)(value - array[low]) / (array[high] - array[low]) * (high - low);
 
 printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 
