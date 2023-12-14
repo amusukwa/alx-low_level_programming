@@ -1,53 +1,76 @@
+#include "search_algos.h"
+#include <stddef.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * exponential_search - Searches for a value in a sorted array
- * @array: Pointer to the first element of the array
- * @size: Number of elements in the array
- * @value: Value to search for
- *
- * Return: The first index where value is located, or -1 if not found
+ * print_array - Prints the contents of an array.
+ * @array: The source of the array to print.
+ * @l: The left index of the array.
+ * @r: The right index of the array.
  */
-int exponential_search(int *array, size_t size, int value)
+void print_array(int *array, size_t l, size_t r)
 {
-    size_t bound = 1;
+	size_t i;
 
-    if (array == NULL)
-        return -1;
+	if (array)
+	{
+		printf("Searching in array: ");
+		for (i = l; i < l + (r - l + 1); i++)
+			printf("%d%s", *(array + i), i < l + (r - l) ? ", " : "\n");
+	}
+}
 
-    while (bound < size && array[bound] < value)
-    {
-        printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
-        bound *= 2;
-    }
+/**
+ * binary_search_index - Searches a value in a sorted array using \
+ * a binary search.
+ * @array: The array to search in.
+ * @l: The left index of the array.
+ * @r: The right index of the array.
+ * @value: The value to look for.
+ *
+ * Return: The first index of the value in the array, otherwise -1.
+ */
+int binary_search_index(int *array, size_t l, size_t r, int value)
+{
+	size_t m;
 
-    size_t left = bound / 2;
-    size_t right = (bound < size - 1) ? bound : size - 1;
+	if (!array)
+		return (-1);
+	print_array(array, l, r);
+	m = l + ((r - l) / 2);
+	if (l == r)
+		return (*(array + m) == value ? (int)m : -1);
+	if (value < *(array + m))
+	{
+		return (binary_search_index(array, l, m, value));
+	}
+	else if (value == *(array + m))
+	{
+		if ((m > 0) && (*(array + m - 1) == value))
+		{
+			return (binary_search_index(array, l, m, value));
+		}
+		return ((int)m);
+	}
+	else
+	{
+		return (binary_search_index(array, m + 1, r, value));
+	}
+}
 
-    printf("Value found between indexes [%lu] and [%lu]\n", left, right);
-
-    while (left <= right)
-    {
-        size_t mid = (left + right) / 2;
-
-        printf("Searching in array: ");
-        for (size_t i = left; i <= right; ++i)
-        {
-            printf("%d", array[i]);
-            if (i < right)
-                printf(", ");
-        }
-        printf("\n");
-
-        if (array[mid] == value)
-            return mid;
-
-        if (array[mid] < value)
-            left = mid + 1;
-        else
-            right = mid - 1;
-    }
-
-    return (-1);
+/**
+ * advanced_binary - Searches a value in a sorted array using a binary search.
+ * @array: The array to search in.
+ * @size: The length of the array.
+ * @value: The value to look for.
+ *
+ * Return: The first index of the value in the array, otherwise -1.
+ */
+int advanced_binary(int *array, size_t size, int value)
+{
+	if (!array || !size)
+		return (-1);
+	else if ((size == 1) && (*array == value))
+		return (0);
+	return (binary_search_index(array, 0, size - 1, value));
 }
